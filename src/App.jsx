@@ -6,6 +6,7 @@ function App() {
   const [apiMovies, setApiMovies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [searchTerm, setSearchTerm] = useState('')
 
    useEffect(() => {
      async function fetchMovies() {
@@ -31,17 +32,29 @@ function App() {
   fetchMovies()
 }, [])
 
+   const filteredMovies = apiMovies.filter((movie) =>
+  movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+)
+
   return (
     <main>
       <h1>MovieBox</h1>
       <p>Discover, explore and save your favourite movies.</p>
+     
+     
+      <input
+  type="text"
+  placeholder="Search movies..."
+  value={searchTerm}
+  onChange={(event) => setSearchTerm(event.target.value)}
+/>
 
     {loading ? (
   <p>Loading movies...</p>
 ) : error ? (
   <p>{error}</p>
 ) : (
-  apiMovies.map((movie) => (
+  filteredMovies.map((movie) => (
         <MovieCard
           key={movie.id}
           title={movie.title}
