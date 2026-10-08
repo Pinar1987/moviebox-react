@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../store/cartSlice'
 
 function MovieDetails() {
     const { id } = useParams()
+    const dispatch = useDispatch()
     
     
     const [movie, setMovie] = useState(null)
@@ -54,7 +57,17 @@ return (
     <p>Release date: {movie.release_date}</p>
 
     <p>Price: 129 SEK</p>
+
+   
+    
+    <button onClick={() => dispatch(addToCart(movie))}>
+  Add to cart
+</button>
+
+<Link to="/cart">Go to cart</Link>
+ 
   </main>
+  
 
   )
 }
