@@ -56,6 +56,7 @@ function Movies() {
         filteredMovies.map((movie) => (
           <MovieCard
             key={movie.id}
+            id={movie.id}
             title={movie.title}
             rating={movie.vote_average}
             price={129}

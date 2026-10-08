@@ -1,10 +1,14 @@
-function MovieCard({ title, rating, price }) {
+import { Link } from 'react-router-dom'
+function MovieCard({ id, title, rating, price }) {
   return (
-    <article>
-      <h2>{title}</h2>
-      <p>Rating: {rating}</p>
-      <p>Price: {price} SEK</p>
-    </article>
+    <Link to={`/movie/${id}`}>
+      <article>
+        <h2>{title}</h2>
+        <p>Rating: {rating}</p>
+        <p>Price: {price} SEK</p>
+        <p>ID: {id}</p>
+      </article>
+    </Link>
   )
 }
 
