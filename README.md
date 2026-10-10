@@ -1,16 +1,18 @@
-# React + Vite
+# 🎬 MovieBox
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieBox is a data-driven movie store built with React as an individual school project.
 
-Currently, two official plugins are available:
+The application uses external APIs to let users browse movies, search for movies, view detailed information and save movies in a shopping cart.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse popular movies from TMDb
+- Search movies by title
+- View detailed information about a selected movie
+- View movie posters, ratings and release dates
+- Add movies to a shopping cart
+- Remove movies from the shopping cart
+- View the number of movies in the cart
+- Switch between SEK, EUR and USD
+- Responsive movie catalogue
+- Loading and error handling
