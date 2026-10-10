@@ -48,11 +48,18 @@ if (error) {
 
 return (
   <main>
+
+    <img
+  className="details-poster"
+  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+  alt={`${movie.title} poster`}
+/>
+    
     <h1>{movie.title}</h1>
 
     <p>{movie.overview}</p>
 
-    <p>Rating: {movie.vote_average}</p>
+    <p>Rating: {movie.vote_average.toFixed(1)}</p>
 
     <p>Release date: {movie.release_date}</p>
 

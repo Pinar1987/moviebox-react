@@ -9,7 +9,7 @@ function MovieCard({ id, title, rating, price, posterPath}) {
   alt={`${title} poster`}
 /> 
         <h2>{title}</h2>
-        <p>Rating: {rating}</p>
+        <p>Rating: {rating.toFixed(1)}</p>
         <p>Price: {price} SEK</p>
       </article>
     </Link>
