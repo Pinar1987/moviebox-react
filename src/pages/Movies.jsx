@@ -60,6 +60,7 @@ function Movies() {
             title={movie.title}
             rating={movie.vote_average}
             price={129}
+            posterPath={movie.poster_path}
           />
         ))
       )}
