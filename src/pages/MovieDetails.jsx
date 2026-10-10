@@ -66,12 +66,13 @@ return (
     <p>Price: 129 SEK</p>
 
    
-    
+    <div className="details-actions">
     <button onClick={() => dispatch(addToCart(movie))}>
   Add to cart
 </button>
 
 <Link to="/cart">Go to cart</Link>
+</div>
  
   </main>
   
