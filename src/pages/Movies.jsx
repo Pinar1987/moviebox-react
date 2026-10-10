@@ -48,24 +48,27 @@ function Movies() {
         onChange={(event) => setSearchTerm(event.target.value)}
       />
 
-      {loading ? (
-        <p>Loading movies...</p>
-      ) : error ? (
-        <p>{error}</p>
-      ) : (
-        filteredMovies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            rating={movie.vote_average}
-            price={129}
-            posterPath={movie.poster_path}
-          />
-        ))
-      )}
+     {loading ? (
+  <p>Loading movies...</p>
+) : error ? (
+  <p>{error}</p>
+) : (
+  <div className="movie-grid">
+    {filteredMovies.map((movie) => (
+      <MovieCard
+        key={movie.id}
+        id={movie.id}
+        title={movie.title}
+        rating={movie.vote_average}
+        price={129}
+        posterPath={movie.poster_path}
+      />
+    ))}
+  </div>
+    )}
     </main>
   )
 }
 
 export default Movies
+
