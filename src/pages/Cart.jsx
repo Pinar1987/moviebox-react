@@ -50,7 +50,9 @@ function convertPrice(price) {
   }
 
   return `${(price * rates[currency]).toFixed(2)} ${currency}`
-}
+}  
+  const totalPrice = items.length * 129
+ 
   return (
     <main>
       <h1>Shopping Cart</h1>
@@ -68,22 +70,63 @@ function convertPrice(price) {
   </select>
 </label>
 
-    {items.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        items.map((movie) => (
-          <article key={movie.id}>
-            <h2>{movie.title}</h2>
-            <p>Price: {convertPrice(129)}</p>
+<div className="cart-layout">
 
-            <button onClick={() => dispatch(removeFromCart(movie.id))}>
-              Remove
-            </button>
-          </article>
-        ))
-      )}
+  <div className="cart-list">
+    {items.length === 0 ? (
+      <p>Your cart is empty.</p>
+    ) : (
+      items.map((movie) => (
+        <article className="cart-item" key={movie.id}>
+          <img
+            className="cart-poster"
+            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            alt={`${movie.title} poster`}
+          />
+
+          <div className="cart-item-info">
+            <h2>{movie.title}</h2>
+            <p className="cart-item-type">Movie</p>
+            <p className="cart-price">{convertPrice(129)}</p>
+          </div>
+
+          <button
+            className="remove-button"
+            onClick={() => dispatch(removeFromCart(movie.id))}
+          >
+            Remove
+          </button>
+        </article>
+      ))
+    )}
+  </div>
+
+    
+   {items.length > 0 && (
+  <section className="order-summary">
+    <h2>Order Summary</h2>
+
+    <div className="summary-row">
+      <span>Movies</span>
+      <span>{items.length}</span>
+    </div>
+
+    <div className="summary-total">
+      <span>Total</span>
+      <span>{convertPrice(totalPrice)}</span>
+    </div>
+
+    <button
+  className="checkout-button"
+  onClick={() => alert('Checkout is not implemented in this demo.')}
+>
+  Proceed to checkout
+</button>
+  </section>
+)}
+ </div>
     </main>
   )
-}
+}     
 
 export default Cart

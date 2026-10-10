@@ -4,7 +4,6 @@ import MovieDetails from './pages/MovieDetails'
 import Cart from './pages/cart'
 import Navbar from './components/Navbar'
 
-
 function App() {
   return (
     <>

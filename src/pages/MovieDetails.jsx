@@ -47,7 +47,9 @@ if (error) {
 }
 
 return (
-  <main>
+
+  
+  <main className="movie-details-page">
 
     <img
   className="details-poster"
@@ -66,12 +68,14 @@ return (
     <p>Price: 129 SEK</p>
 
    
-    <div className="details-actions">
-    <button onClick={() => dispatch(addToCart(movie))}>
-  Add to cart
-</button>
+<div className="details-actions">
+  <button onClick={() => dispatch(addToCart(movie))}>
+    Add to cart
+  </button>
 
-<Link to="/cart">Go to cart</Link>
+  <Link to="/cart">
+    Shopping cart
+  </Link>
 </div>
  
   </main>
