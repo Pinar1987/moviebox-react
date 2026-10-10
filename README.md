@@ -95,3 +95,42 @@ Start the development server:
 ```bash
 npm run dev
 ```
+
+## Examination Requirements
+
+### G Requirements
+
+MovieBox includes:
+
+- Data fetching from an external API
+- Search functionality
+- Loading and error handling
+- Multiple views with React Router
+- Movie catalogue
+- Dynamic movie detail view
+- Add movies to the shopping cart
+- Remove movies from the shopping cart
+- Clearly visible saved cart items
+
+### VG – Advanced State Management
+
+Redux Toolkit is used to manage the shopping cart as global state.
+
+This allows multiple components, such as MovieDetails, Navbar and Cart, to access and update the same state.
+
+### VG – API Mashup
+
+MovieBox combines two external APIs:
+
+- TMDb for movie data
+- Frankfurter for currency exchange rates
+
+The movie data from TMDb is combined with current exchange rates so prices can be displayed in SEK, EUR or USD.
+
+## Responsive Design
+
+The movie catalogue uses CSS Grid with `auto-fit` and `minmax()` so the number of columns automatically adapts to the available screen width.
+
+## Author
+
+Pinar Buyukcelebi
